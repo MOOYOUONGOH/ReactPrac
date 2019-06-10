@@ -16,7 +16,6 @@ class App extends React.Component{
                     <Route exact path="/texts" component={Texts}/>
                     <Route exact path="/words" component={Words}/>
                     <Route exact path="/detail/:textID" component={Detail}/>
-                    
                 </div>
             </AppShell>
             </Router>
