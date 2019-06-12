@@ -7,7 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import image from '../images/Pastor.png';
 import image2 from '../images/2.jpg';
-import image3 from '../images/3.jpg';
+import csumb from '../images/csumb.jpeg';
 import image4 from '../images/4.jpg';
 import image5 from '../images/5.jpg';
  
@@ -39,31 +39,31 @@ const useStyles = makeStyles(theme => ({
   const tileData = [
     {
       img: image,
-      title: 'About Pastor',
+      title: 'Pastor',
       author: 'Admin',
-      featured: true,
+      featured: false,
     },
     {
         img: image2,
-        title: 'Image',
+        title: 'Church',
         author: 'author',
-        featured: true,
+        featured: false,
       },
       {
-        img: image3,
-        title: 'Image',
+        img: csumb,
+        title: 'CSU Monterey Bay',
         author: 'author',
         featured: true,
       },
       {
         img: image4,
-        title: 'Image',
+        title: 'Monterey Bay',
         author: 'author',
         featured: false,
       },
       {
         img: image5,
-        title: 'Image',
+        title: 'Information Share',
         author: 'author',
         featured: false,
       },    

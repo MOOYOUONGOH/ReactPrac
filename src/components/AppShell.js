@@ -130,6 +130,9 @@ function MiniDrawer() {
           >
             <MenuIcon />
           </IconButton>
+          <Typography variant="h6" noWrap>
+            Monterey Hope Church 몬트레이 소망 교회
+          </Typography>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -177,9 +180,6 @@ function MiniDrawer() {
               </Paper>
             </Grid>
           </Grid>
-        <Typography paragraph>
-          2
-        </Typography>
       </main>
     </div>
   );
