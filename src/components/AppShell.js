@@ -17,12 +17,27 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import HomeIcon from '@material-ui/icons/Home';
+import Pastor from '../images/Pastor.png';
+import {HashRouter as Router, Route} from 'react-router-dom';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import AdvancedGridList from './GridView';
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
+  },
+  Pastor: {
+    width: '100%',
+    height: 'auto',
+  },  
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
@@ -115,9 +130,6 @@ function MiniDrawer() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
-            Monterey Hope Church
-          </Typography>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -141,16 +153,14 @@ function MiniDrawer() {
         </div>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
+            <ListItem button>
+              <ListItemIcon> <HomeIcon /> </ListItemIcon>
+              <ListItemText/>
             </ListItem>
-          ))}
         </List>
         <Divider />
         <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
+          {['Information', 'Trash', 'Spam'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
@@ -160,11 +170,15 @@ function MiniDrawer() {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
+          <Grid container spacing={3}>
+            <Grid item xs={12}>
+              <Paper className={classes.paper}>
+                <AdvancedGridList />
+              </Paper>
+            </Grid>
+          </Grid>
         <Typography paragraph>
-          Content 1
-        </Typography>
-        <Typography paragraph>
-          Content 2
+          2
         </Typography>
       </main>
     </div>
