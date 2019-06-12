@@ -18,6 +18,11 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import HomeIcon from '@material-ui/icons/Home';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import InfoIcon from '@material-ui/icons/Info';
+import PhotoIcon from '@material-ui/icons/Photo';
+import LocationIcon from '@material-ui/icons/Explore';
+
 import Pastor from '../images/Pastor.png';
 import {HashRouter as Router, Route} from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
@@ -96,6 +101,30 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const menuIcons = [
+  {
+    index : '1',
+    text : 'Home'
+  },
+  {
+    index : '2',
+    text : 'About'
+  },
+  {
+    index : '3',
+    text : 'Photo'
+  },
+  {
+    index : '4',
+    text : 'Information'
+  },
+  {
+    index : '5',
+    text : 'Vision Trip'
+  }
+
+]
+
 function MiniDrawer() {
   const classes = useStyles();
   const theme = useTheme();
@@ -156,20 +185,39 @@ function MiniDrawer() {
         </div>
         <Divider />
         <List>
-            <ListItem button>
-              <ListItemIcon> <HomeIcon /> </ListItemIcon>
-              <ListItemText/>
-            </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+             <HomeIcon />
+            </ListItemIcon>
+          <ListItemText primary="Home" />
+          </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <PhotoIcon />
+          </ListItemIcon>
+          <ListItemText primary="Photo" />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <DashboardIcon />
+          </ListItemIcon>
+          <ListItemText primary="Calender" />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <InfoIcon />
+          </ListItemIcon>
+          <ListItemText primary="Infomation" />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <LocationIcon />
+          </ListItemIcon>
+          <ListItemText primary="Location" />
+        </ListItem>
         </List>
         <Divider />
-        <List>
-          {['Information', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
+        
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />

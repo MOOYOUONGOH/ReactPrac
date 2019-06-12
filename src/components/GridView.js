@@ -16,12 +16,12 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
-    overflow: 'hidden',
+    overflowY: 'auto',
     backgroundColor: theme.palette.background.paper,
   },
   gridList: {
     width: 500,
-    height: 450,
+    height: 820,
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: 'translateZ(0)',
   },
