@@ -1,12 +1,10 @@
-div {
-    background-color:#99cc00;
-    padding:10px;
-}
 
-.pastorPic{
-    /* background-image:url('./../images/settings.png');  */
-    background-repeat:no-repeat;
-    height:50px;
-    width:50px;
-    display:inline-block;
+.ol, ul{
+    list-style-type: none;
+}
+.wordsByPastor{
+line-height: 2;
+padding :5px;
+display: block;
+
 }
