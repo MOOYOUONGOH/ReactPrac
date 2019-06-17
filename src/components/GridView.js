@@ -20,6 +20,7 @@ import '../styles/app.css';
 import { sizing } from '@material-ui/system';
 
 const useStyles = makeStyles(theme => ({
+  
   root: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -27,6 +28,7 @@ const useStyles = makeStyles(theme => ({
     overflowY: 'hidden',
     overflowX: 'hidden',
     backgroundColor: theme.palette.background.paper,
+  
   },
   gridList: {
     width: 500,
@@ -45,7 +47,6 @@ const useStyles = makeStyles(theme => ({
   
 
 }));
-
 
 
   const tileData = [
@@ -135,7 +136,7 @@ export default function AdvancedGridList() {
           </Paper>
         </Grid>
         <Grid item xs={6}>
-            <GridList cellHeight={220} spacing={20} className={classes.gridList}>
+            <GridList id = "gridPics" cellHeight={220} spacing={20} className={classes.gridList}>
               {tileData.map(tile => (
                 <GridListTile key={tile.img} cols={tile.featured ? 2 : 1} rows={tile.featured ? 2 : 1}>
                   <img src={tile.img} alt={tile.title} />
