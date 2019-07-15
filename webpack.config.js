@@ -9,11 +9,6 @@ module.exports = {
         path: path.resolve(__dirname, './build'),
         filename: '[name].js'
     },
-    optimization: {
-        splitChunks: {
-           chunks: 'all'
-        }
-    },
     module:{
         rules: [{
             test: /\.js$/,
@@ -35,13 +30,7 @@ module.exports = {
             }]
         }
     ]
-    },    
-    plugins: [
-        new CopyWebpackPlugin([{
-            context: './public',
-            from: '*.*' 
-        }])
-    ],
+    },
     devServer: {
         contentBase: './public',
         host: 'localhost',

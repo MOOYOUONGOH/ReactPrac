@@ -18,6 +18,7 @@ import {Typography} from '@material-ui/core';
 
 import '../styles/app.css';
 import { sizing } from '@material-ui/system';
+import CardMedia from '@material-ui/core/CardMedia';
 
 const useStyles = makeStyles(theme => ({
   
@@ -28,7 +29,10 @@ const useStyles = makeStyles(theme => ({
     overflowY: 'hidden',
     overflowX: 'hidden',
     backgroundColor: theme.palette.background.paper,
-  
+    flexGrow: 1,
+  },
+  control: {
+    padding: theme.spacing(2),
   },
   gridList: {
     width: 500,
@@ -84,25 +88,24 @@ const useStyles = makeStyles(theme => ({
  
 export default function AdvancedGridList() {
   const classes = useStyles();
+  const [spacing, setSpacing] = React.useState(2);
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} className={classes.control}>
         <Grid item xs={6}>
           <Paper className={classes.paper}>
-            
-            
-            <Typography component="h5" variant="h5">
+            <Typography align = "center" component="h5" variant="h5">
             <img src={image} id="pastor" style={{width: "60%" }} />
             
             <br/>
             임우영 담임목사
             </Typography>
             <hr />
-            <Typography component="h5" variant="h5">
+            <Typography align = "center"component="h5" variant="h5">
               목사님 약력
             </Typography>
-            <Typography >
+            <Typography align = "center" >
               <br/>
               총신대학교 신학<br />
               대학원(M.Div) <br />
@@ -115,17 +118,17 @@ export default function AdvancedGridList() {
               
             </Typography>
             <hr/>
-            <Typography variant="h5" component="h5"> 
+            <Typography align = "center" variant="h5" component="h5"> 
             전하는 말씀
             </Typography>
             <Typography align="left" id ="wordsByPastor" component="h6">
-            <br/>&nbsp;&nbsp; 아름다운 몬트레이에서 하나님께 예배드리는 자가 가장 아름다운 사람들입니다. 
+            <br/>&nbsp; 아름다운 몬트레이에서 하나님께 예배드리는 자가 가장 아름다운 사람들입니다. 
             우리 함께 사랑하는 주님께 예배합시다. 예배로 여러분을 초대합니다.<br/> 
-            &nbsp;&nbsp; 주님의 말씀이 선포되고 그 말씀에 순종하는 주님의 백성이 있는 곳이 교회입니다. <br />
+            &nbsp; 주님의 말씀이 선포되고 그 말씀에 순종하는 주님의 백성이 있는 곳이 교회입니다. <br />
             소망교회에 함께 교회가 되실 성도를 환영합니다. <br />
              저희교회는 CSUMB 유학생에게 복음을 전합니다. 
             벌써 4년째를 맞이한 유학생들의 방문은 교회의 사명이 되었습니다. <br />
-            &nbsp;&nbsp; 올해도 주님이 만나게 하실 생명을 기다립니다. 
+            &nbsp; 올해도 주님이 만나게 하실 생명을 기다립니다. 
             마리나에서 함께 하나님의 나라를 세워갈 성도님을 축복하고 환영합니다.
             ​올 2019년도에는 교회에 가는 사람이 아닌 교회가 되는 주님의 백성을 만나길 소망합니다. <br /><br />
       
@@ -135,7 +138,9 @@ export default function AdvancedGridList() {
             </Typography>
           </Paper>
         </Grid>
-        <Grid item xs={6}>
+        <Paper className={classes.paper}>
+
+        <Grid align = "center" item xs={6} className={classes.control}>
             <GridList id = "gridPics" cellHeight={220} spacing={20} className={classes.gridList}>
               {tileData.map(tile => (
                 <GridListTile key={tile.img} cols={tile.featured ? 2 : 1} rows={tile.featured ? 2 : 1}>
@@ -156,6 +161,7 @@ export default function AdvancedGridList() {
             </GridList>
          
         </Grid>
+        </Paper>
       </Grid>
       
     </div>

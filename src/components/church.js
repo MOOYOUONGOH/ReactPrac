@@ -4,7 +4,7 @@ class Church extends React.Component{
     render() {
         return (
             <div>
-            <p> Gallary</p>
+            <p> Church</p>
             </div>
         );
     }

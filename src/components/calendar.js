@@ -4,7 +4,7 @@ class Calendar extends React.Component{
     render() {
         return (
             <div>
-            <p> Gallary</p>
+            <p> Calendar</p>
             </div>
         );
     }
